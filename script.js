@@ -1,3 +1,5 @@
+const apiUrl = "https://carambar-y6ch.onrender.com/jokes"; // URL dU backend
+
 document.addEventListener('DOMContentLoaded', () => {
     const jokeContainer = document.getElementById('joke-container');
     const answerElement = document.getElementById('answer');
@@ -9,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function getRandomJoke() {
     try {
-        const response = await fetch('/jokes/random'); 
+        const response = await fetch(`${apiUrl}/random`); 
         const data = await response.json();
         document.getElementById('question').textContent = data.question;
         
@@ -29,7 +31,7 @@ async function getRandomJoke() {
 
 async function addNewJoke(question, reponse) {
     try {
-      const response = await fetch('/jokes', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question, reponse })
