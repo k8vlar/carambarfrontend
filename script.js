@@ -1,4 +1,4 @@
-const apiUrl = "https://carambar-y6ch.onrender.com/jokes"; 
+const apiUrl = "https://carambar-y6ch.onrender.com/jokes"; // URL dU backend
 
 document.addEventListener('DOMContentLoaded', () => {
     const jokeContainer = document.getElementById('joke-container');
