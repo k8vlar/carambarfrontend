@@ -1,4 +1,4 @@
-const apiUrl = "https://carambar-y6ch.onrender.com/jokes"; // URL dU backend
+const apiUrl = "https://carambar-y6ch.onrender.com/jokes"; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const jokeContainer = document.getElementById('joke-container');
@@ -11,8 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function getRandomJoke() {
     try {
-        const response = await fetch(`${apiUrl}/random`); 
+        console.log('Fetching joke...');
+        const response = await fetch(`${apiUrl}/random`);
+        console.log('Response received:', response);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+      }
         const data = await response.json();
+        console.log('Joke data:', data);
         document.getElementById('question').textContent = data.question;
         
         // Afficher la réponse
