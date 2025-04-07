@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     jokeContainer.addEventListener('mouseover', () => {
         answerElement.classList.remove('blurred');
     });
+    
 });
 
 async function getRandomJoke() {
@@ -52,5 +53,5 @@ async function addNewJoke(question, reponse) {
       console.error('Erreur:', error);
     }
   }
-//exemple
+
 //   addNewJoke('Pourquoi les plongeurs plongent-ils toujours en arrière ?', 'Parce que sinon ils tombent dans le bateau.');
